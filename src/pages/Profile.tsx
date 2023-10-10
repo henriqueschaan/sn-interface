@@ -92,7 +92,7 @@ export function Profile() {
                 <div className={`flex-grow flex flex-col lg:overflow-auto lg:h-screen ${isModalOpen && "hidden lg:flex"}`} ref={scrollContainerRef}>
                     <div className="flex flex-grow justify-between lg:hidden my-[30px] px-[33px]">
                         <button onClick={() => navigate(-1)}><img src={back} alt="voltar" /></button>
-                        <Link to={`/settings`} className="w-5"><img src={settings} alt="configurações" className="m-auto" /></Link>
+                        {(username === localStorage.getItem('username')) && <Link to={`/settings`} className="w-5"><img src={settings} alt="configurações" className="m-auto" /></Link>}
                     </div>
                     <div className="flex flex-col flex-grow self-center items-center w-full max-w-6xl lg:px-[89px]">
                         <div className="flex flex-col lg:flex-row items-center lg:mt-14 lg:self-start">

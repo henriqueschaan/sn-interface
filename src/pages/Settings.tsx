@@ -38,6 +38,7 @@ export function Settings() {
                 password: formData.get('password')
             });
             fetchProfile();
+            navigate(`/${user?.username}`)
         } catch (error) {
             console.error('Erro ao atualizar a conta:', error);
         }
@@ -54,6 +55,8 @@ export function Settings() {
                 description: formData.get('description')
             });
             fetchProfile();
+            localStorage.setItem('username', formData.get('username') as string);
+            navigate(`/${localStorage.getItem('username')}`)
         } catch (error) {
             console.error('Erro ao atualizar perfil:', error);
         }
